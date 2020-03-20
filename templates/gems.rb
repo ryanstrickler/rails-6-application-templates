@@ -1,6 +1,6 @@
 run 'rm Gemfile'
 run 'rm Gemfile.lock'
-file 'Gemfile', <<-CODE
+file 'Gemfile', <<~CODE.strip_heredoc
   source 'https://rubygems.org'
 
   ruby '2.7.0'
