@@ -1,3 +1,8 @@
+run 'rm .ruby-version'
+file '.ruby-version', <<~CODE.strip_heredoc
+  2.7.0
+CODE
+
 run 'rm Gemfile'
 run 'rm Gemfile.lock'
 file 'Gemfile', <<~CODE.strip_heredoc
@@ -8,15 +13,15 @@ file 'Gemfile', <<~CODE.strip_heredoc
   gem 'rails', '6.0.2.1'
 
   gem 'bcrypt'
-  gem 'image_processing'
   gem 'bootsnap', require: false
+  gem 'image_processing'
+  gem 'jbuilder'
   gem 'pg'
   gem 'puma'
   gem 'redis'
   gem 'sass-rails'
   gem 'turbolinks'
   gem 'webpacker'
-  gem 'jbuilder'
 
   group :development, :test do
     gem 'byebug'
