@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo What is the name of this project?
+echo What is the name of your new Rails app?
 read app_name
 
 rails new $app_name -d postgresql --webpack=stimulus
@@ -17,4 +17,5 @@ git commit -a -m 'Initial commit'
 cd ..
 mv $app_name rails
 cd rails
+
 atom .
