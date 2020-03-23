@@ -20,6 +20,7 @@ file 'Gemfile', <<~CODE.strip_heredoc
 
   gem 'appsignal'
   gem 'clockwork'
+  gem 'httparty'
   gem 'lograge'
   gem 'sidekiq'
   gem 'slim'
