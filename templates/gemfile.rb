@@ -46,7 +46,8 @@ file 'Gemfile', <<~CODE.strip_heredoc
     gem 'webdrivers'
 
     gem 'minitest-spec-rails'
-    gem 'simplecov', require: false
     gem 'mocha'
+    gem 'simplecov', require: false
+    gem 'webmock', require: false
   end
 CODE
