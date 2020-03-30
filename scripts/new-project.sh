@@ -12,6 +12,8 @@ cd $app_name
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/gemfile.rb
 bundle
 
+rails db:create
+
 git init
 git add '.'
 git commit -a -m 'Initial commit'
