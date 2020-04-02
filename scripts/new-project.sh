@@ -13,6 +13,7 @@ rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rail
 bundle
 
 rails db:create
+rails db:migrate
 
 git init
 git add '.'
