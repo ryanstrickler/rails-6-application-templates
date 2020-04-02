@@ -1,5 +1,5 @@
 run 'rm config/routes.rb'
-file 'config/routes', <<~CODE.strip_heredoc
+file 'config/routes.rb', <<~CODE.strip_heredoc
   Rails.application.routes.draw do
     root to: 'root#index'
   end
