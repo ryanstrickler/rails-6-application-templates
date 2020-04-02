@@ -4,12 +4,7 @@ file 'test/test_helper.rb', <<~CODE.strip_heredoc
   ENV['RAILS_ENV'] ||= 'test'
 
   require 'simplecov'
-  SimpleCov.start 'rails' do
-    add_filter 'app/channels'
-    add_filter 'app/mailers'
-    add_filter 'app/jobs'
-    add_filter 'lib'
-  end
+  SimpleCov.start 'rails'
 
   require_relative '../config/environment'
   require 'rails/test_help'
