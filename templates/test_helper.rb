@@ -23,4 +23,4 @@ file 'test/test_helper.rb', <<~CODE.strip_heredoc
     # parallelize(workers: :number_of_processors)
     fixtures :all
   end
-end
+CODE
