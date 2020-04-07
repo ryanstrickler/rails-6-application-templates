@@ -21,7 +21,7 @@ file 'test/controllers/root_controller_test.rb', <<~CODE.strip_heredoc
 
   class RootControllerTest < ActionDispatch::IntegrationTest
     describe '#index' do
-      test 'page loads' do
+      test 'page loaded' do
         get root_url
         assert_response :ok
       end
