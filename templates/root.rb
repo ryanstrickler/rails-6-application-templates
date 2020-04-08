@@ -5,6 +5,7 @@ file 'config/routes.rb', <<~CODE.strip_heredoc
   end
 CODE
 
+run 'rm app/controllers/root_controller.rb'
 file 'app/controllers/root_controller.rb', <<~CODE.strip_heredoc
   class RootController < ApplicationController
     def index
@@ -12,10 +13,12 @@ file 'app/controllers/root_controller.rb', <<~CODE.strip_heredoc
   end
 CODE
 
+run 'rm app/views/root/index.html.slim'
 file 'app/views/root/index.html.slim', <<~CODE.strip_heredoc
   h1 Root
 CODE
 
+run 'rm test/controllers/root_controller_test.rb'
 file 'test/controllers/root_controller_test.rb', <<~CODE.strip_heredoc
   require 'test_helper'
 
@@ -28,3 +31,6 @@ file 'test/controllers/root_controller_test.rb', <<~CODE.strip_heredoc
     end
   end
 CODE
+
+run 'rm test/system/load_root_test.rb'
+file 'test/system/load_root_test.rb', File.read('https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/files/test/system/load_root_test.rb')
