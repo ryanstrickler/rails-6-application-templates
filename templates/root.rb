@@ -1,3 +1,5 @@
+require 'open-uri'
+
 run 'rm config/routes.rb'
 file 'config/routes.rb', <<~CODE.strip_heredoc
   Rails.application.routes.draw do
