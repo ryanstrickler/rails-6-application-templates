@@ -1,4 +1,4 @@
-FORMAT = '%Y%m%d%H%M%s'
+FORMAT = '%Y%m%d%H%M%S'
 
 file 'app/models/person.rb', <<~CODE.strip_heredoc
   class Person < ApplicationRecord
