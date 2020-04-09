@@ -7,6 +7,16 @@ file 'app/models/person.rb', <<~CODE.strip_heredoc
 CODE
 
 file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_create_people.rb", <<~CODE.strip_heredoc
+  class CreatePeople < ActiveRecord::Migration[6.0]
+    def change
+      create_table :people do |t|
+        t.string :first_name, null: false
+        t.string :last_name, null: false
+
+        t.timestamps
+      end
+    end
+  end
 CODE
 
 file 'test/fixtures/people.yml', <<~CODE.strip_heredoc
