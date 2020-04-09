@@ -15,9 +15,18 @@ file 'app/controllers/root_controller.rb', <<~CODE.strip_heredoc
   end
 CODE
 
+run 'rm app/helpers/root_helper.rb'
+file 'app/helpers/root_helper.rb', <<~CODE.strip_heredoc
+  module RootHelper
+    def test_helper(content:)
+      content
+    end
+  end
+CODE
+
 run 'rm app/views/root/index.html.slim'
 file 'app/views/root/index.html.slim', <<~CODE.strip_heredoc
-  h1 Root
+  h1 = test_helper(content: 'Root')
 CODE
 
 run 'rm test/controllers/root_controller_test.rb'
