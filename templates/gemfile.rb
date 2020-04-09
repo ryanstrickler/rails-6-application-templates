@@ -11,7 +11,7 @@ file 'Gemfile', <<~CODE.strip_heredoc
 
   ruby '2.6.5'
 
-  gem 'rails', '6.0.2.1'
+  gem 'rails', '6.0.2.2'
 
   # gem 'bcrypt'
   gem 'bootsnap', require: false
