@@ -1,7 +1,3 @@
-run 'rm .ruby-version'
-run 'rm Gemfile'
-run 'rm Gemfile.lock'
-
 file '.ruby-version', <<~CODE.strip_heredoc
   2.6.5
 CODE
