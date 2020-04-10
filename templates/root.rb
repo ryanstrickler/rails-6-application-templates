@@ -36,4 +36,13 @@ file 'test/controllers/root_controller_test.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'test/system/load_root_test.rb', File.read('https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/files/test/system/load_root_test.rb')
+file 'test/system/load_root_test.rb', <<~CODE.strip_heredoc
+  require "application_system_test_case"
+
+  class LoadRootTest < ApplicationSystemTestCase
+    test "root page loads" do
+      visit root_url
+      assert_selector "h1", text: "Root"
+    end
+  end
+end
