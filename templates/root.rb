@@ -1,5 +1,3 @@
-require 'open-uri'
-
 file 'config/routes.rb', <<~CODE.strip_heredoc
   Rails.application.routes.draw do
     root to: 'root#index'
