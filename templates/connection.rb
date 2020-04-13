@@ -7,7 +7,7 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
       @device.update!(token: 'abcdef')
     end
 
-    test "connects with cookies" do
+    test "connects and disconnects with cookies" do
       cookies.encrypted[:device_token] = @device.token
 
       connect
