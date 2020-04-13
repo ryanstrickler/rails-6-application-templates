@@ -7,7 +7,7 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
       @device.update!(token: 'abcdef')
     end
 
-    test "connects and disconnects with cookies" do
+    test "connects with cookies" do
       cookies.encrypted[:device_token] = @device.token
 
       connect
@@ -17,13 +17,22 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
       assert_nil connection
     end
 
-    test 'fails connection' do
+    test 'fails connection with bad token' do
       cookies.encrypted[:device_token] = 'bad-token'
 
-      assert_raises ActionCable::Connection::Authorization::UnauthorizedError do
-        connect
-      end
+      assert_reject_connection { connect }
+      assert_nil connection
+    end
 
+    test 'fails connection with nil token' do
+      cookies.encrypted[:device_token] = nil
+
+      assert_reject_connection { connect }
+      assert_nil connection
+    end
+
+    test 'fails connection with no token' do
+      assert_reject_connection { connect }
       assert_nil connection
     end
   end
