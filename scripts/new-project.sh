@@ -16,6 +16,8 @@ rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rail
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/person.rb
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/zeitwerk_issues.rb
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/device.rb
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/connection.rb
+
 
 bundle
 
