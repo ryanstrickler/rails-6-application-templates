@@ -19,11 +19,21 @@ file 'app/helpers/root_helper.rb', <<~CODE.strip_heredoc
   end
 CODE
 
+file 'app/views/root/_device_count.html.slim', <<~CODE.strip_heredoc
+  #test-channel-device-count
+    span> = pluralize(Device.connected.count, 'device')
+    | present
+CODE
+
+file 'app/views/root/_status.html.slim', <<~CODE.strip_heredoc
+  #test-channel-status
+    | connecting...
+CODE
+
 file 'app/views/root/index.html.slim', <<~CODE.strip_heredoc
   h1 = test_helper(content: 'Root')
-
-  #test-channel-status
-  #test-channel-device-count
+  = render 'status'
+  = render 'device_count'
 CODE
 
 file 'test/controllers/root_controller_test.rb', <<~CODE.strip_heredoc

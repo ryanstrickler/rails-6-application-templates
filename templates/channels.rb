@@ -1,7 +1,8 @@
 file 'app/channels/test_channel.rb', <<~CODE.strip_heredoc
   class TestChannel < ApplicationCable::Channel
     def subscribed
-      stream_for "all"
+      stream_for 'all'
+      current_device.touch
     end
 
     def unsubscribed
@@ -18,27 +19,17 @@ file 'app/javascript/channels/test_channel.js', <<~CODE.strip_heredoc
     },
 
     disconnected() {
-      this.replaceElement('test-channel-status', 'disconnected')
+      this.replaceElement('test-channel-status', 'connecting...')
     },
 
     received(data) {
-      this.replaceElement(
-        'test-channel-device-count',
-        this.formatDeviceCount(data.count)
-      )
+      // console.log(data)
+      this.replaceElement('test-channel-device-count', data.deviceCount)
     },
 
     replaceElement(id, content) {
       const div = document.getElementById(id)
       div.innerHTML = content
-    },
-
-    formatDeviceCount(count) {
-      if (count === 1) {
-        return '1 device present'
-      } else {
-        return count + ' devices present'
-      }
     }
   });
 CODE
