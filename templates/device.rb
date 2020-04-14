@@ -3,8 +3,6 @@ FORMAT = '%Y%m%d%H%M%S'
 file 'app/models/device.rb', <<~CODE.strip_heredoc
   class Device < ApplicationRecord
     has_secure_token
-
-    validates :token, presence: true
   end
 CODE
 
@@ -33,13 +31,6 @@ file 'test/models/device_test.rb', <<~CODE.strip_heredoc
   class DeviceTest < ActiveSupport::TestCase
     setup do
       @device = devices(:one)
-    end
-
-    describe 'validations' do
-      test 'token required' do
-        @device.token = nil
-        refute @device.valid?
-      end
     end
   end
 CODE
