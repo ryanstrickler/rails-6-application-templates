@@ -4,28 +4,28 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
   class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
     setup do
       @device = devices(:one)
-      @device.update!(token: 'abcdef')
+      @device.update!(id: 123)
     end
 
     test "connects with cookies" do
-      cookies.encrypted[:device_token] = @device.token
+      cookies.encrypted[:device_id] = @device.id
 
       connect
-      assert_equal 'abcdef', connection.current_device.token
+      assert_equal 123, connection.current_device.id
 
       disconnect
       assert_nil connection
     end
 
     test 'fails connection with bad token' do
-      cookies.encrypted[:device_token] = 'bad-token'
+      cookies.encrypted[:device_id] = -1
 
       assert_reject_connection { connect }
       assert_nil connection
     end
 
     test 'fails connection with nil token' do
-      cookies.encrypted[:device_token] = nil
+      cookies.encrypted[:device_id] = nil
 
       assert_reject_connection { connect }
       assert_nil connection
@@ -45,18 +45,16 @@ file 'app/channels/application_cable/connection.rb', <<~CODE.strip_heredoc
 
       def connect
         self.current_device = find_verified_device
-        logger.info "Device connected: #{current_device.token}"
       end
 
       def disconnect
         return if current_device.nil?
-        logger.info "Device disconnected: #{current_device.token}"
       end
 
       private
 
       def find_verified_device
-        if verified_device = Device.find_by(token: cookies.encrypted[:device_token])
+        if verified_device = Device.find_by(id: cookies.encrypted[:device_id])
           verified_device
         else
           reject_unauthorized_connection
