@@ -3,7 +3,7 @@ FORMAT = '%Y%m%d%H%M%S'
 file 'app/models/person.rb', <<~CODE.strip_heredoc
   class Person < ApplicationRecord
     validates :first_name, :last_name, presence: true
-    
+
     def full_name
       "#{first_name} #{last_name}"
     end
@@ -50,6 +50,20 @@ file 'test/models/person_test.rb', <<~CODE.strip_heredoc
       test 'last name required' do
         @person.last_name = nil
         refute @person.valid?
+      end
+    end
+
+    describe 'methods' do
+      describe 'full_name' do
+        test 'combines first/last name' do
+          assert_equal 'Luke Skywalker', @person.full_name
+        end
+      end
+
+      describe 'email' do
+        test 'returns hard-coded value for now' do
+          assert_equal 'testing@test123.com', @person.email
+        end
       end
     end
   end
