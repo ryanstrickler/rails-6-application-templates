@@ -40,16 +40,10 @@ file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_create_devices.rb", <<~'CODE'.
   class CreateDevices < ActiveRecord::Migration[6.0]
     def change
       create_table :devices do |t|
+        t.string :status, null: false, default: 'disconnected'
+
         t.timestamps
       end
-    end
-  end
-CODE
-
-file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_add_status_to_devices.rb", <<~'CODE'.strip_heredoc
-  class AddStatusToDevice < ActiveRecord::Migration[6.0]
-    def change
-      add_column :devices, :status, :string, null: false, default: 'disconnected'
     end
   end
 CODE
