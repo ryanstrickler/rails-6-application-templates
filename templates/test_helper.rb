@@ -1,3 +1,4 @@
+run 'rm test/test_helper.rb'
 file 'test/test_helper.rb', <<~CODE.strip_heredoc
   ENV['RAILS_ENV'] ||= 'test'
 

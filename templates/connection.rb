@@ -1,3 +1,4 @@
+run 'rm test/channels/application_cable/connection_test.rb'
 file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
   require "test_helper"
 
@@ -38,6 +39,7 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
   end
 CODE
 
+run 'rm app/channels/application_cable/connection.rb'
 file 'app/channels/application_cable/connection.rb', <<~CODE.strip_heredoc
   module ApplicationCable
     class Connection < ActionCable::Connection::Base
