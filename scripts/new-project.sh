@@ -21,6 +21,7 @@ rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rail
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/jobs.rb
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/connection.rb
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/channels.rb
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/rubocop.rb
 
 rails db:create
 rails db:migrate

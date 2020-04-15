@@ -7,8 +7,7 @@ CODE
 
 file 'app/controllers/root_controller.rb', <<~'CODE'.strip_heredoc
   class RootController < ApplicationController
-    def index
-    end
+    def index; end
   end
 CODE
 

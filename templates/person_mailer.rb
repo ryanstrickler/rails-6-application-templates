@@ -5,7 +5,7 @@ file 'app/mailers/person_mailer.rb', <<~'CODE'.strip_heredoc
 
       mail(
         to: person.email,
-        subject: "This is a test"
+        subject: 'This is a test'
       )
     end
   end
@@ -28,7 +28,7 @@ file 'test/mailers/person_mailer_test.rb', <<~'CODE'.strip_heredoc
       refute ActionMailer::Base.deliveries.empty?
 
       assert_equal [person.email], email.to
-      assert_equal "This is a test", email.subject
+      assert_equal 'This is a test', email.subject
     end
   end
 CODE

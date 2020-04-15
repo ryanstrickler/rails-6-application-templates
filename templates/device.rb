@@ -9,6 +9,7 @@ file 'app/controllers/application_controller.rb', <<~'CODE'.strip_heredoc
 
     def check_device
       return if cookies.encrypted[:device_id].present?
+
       device = Device.create!
       cookies.encrypted[:device_id] = device.id
     end

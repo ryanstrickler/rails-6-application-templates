@@ -5,8 +5,7 @@ file 'app/channels/test_channel.rb', <<~'CODE'.strip_heredoc
       current_device.touch
     end
 
-    def unsubscribed
-    end
+    def unsubscribed; end
   end
 CODE
 

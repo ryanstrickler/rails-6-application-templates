@@ -37,8 +37,8 @@ file 'Gemfile', <<~'CODE'.strip_heredoc
 
   group :development do
     gem 'listen'
-    gem 'spring-watcher-listen'
     gem 'spring'
+    gem 'spring-watcher-listen'
     gem 'web-console'
 
     gem 'rubocop', require: false
