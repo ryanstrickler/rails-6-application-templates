@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-# bash <(curl -Ls https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/scripts/new-project.sh)
+# bash <(curl -Ls https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/scripts/new-project.sh)
 
 echo What is the name of your new Rails app?
 read app_name
