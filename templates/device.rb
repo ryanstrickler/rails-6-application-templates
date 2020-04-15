@@ -1,5 +1,6 @@
 FORMAT = '%Y%m%d%H%M%S'
 
+run 'rm app/controllers/application_controller.rb'
 file 'app/controllers/application_controller.rb', <<~CODE.strip_heredoc
   class ApplicationController < ActionController::Base
     before_action :check_device
