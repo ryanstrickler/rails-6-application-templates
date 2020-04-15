@@ -1,7 +1,7 @@
 FORMAT = '%Y%m%d%H%M%S'
 
 run 'rm app/controllers/application_controller.rb'
-file 'app/controllers/application_controller.rb', <<~CODE.strip_heredoc
+file 'app/controllers/application_controller.rb', <<~'CODE'.strip_heredoc
   class ApplicationController < ActionController::Base
     before_action :check_device
 
@@ -15,7 +15,7 @@ file 'app/controllers/application_controller.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'app/models/device.rb', <<~CODE.strip_heredoc
+file 'app/models/device.rb', <<~'CODE'.strip_heredoc
   class Device < ApplicationRecord
     enum status: {
       connected: 'connected',
@@ -36,7 +36,7 @@ file 'app/models/device.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_create_devices.rb", <<~CODE.strip_heredoc
+file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_create_devices.rb", <<~'CODE'.strip_heredoc
   class CreateDevices < ActiveRecord::Migration[6.0]
     def change
       create_table :devices do |t|
@@ -46,7 +46,7 @@ file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_create_devices.rb", <<~CODE.st
   end
 CODE
 
-file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_add_status_to_devices.rb", <<~CODE.strip_heredoc
+file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_add_status_to_devices.rb", <<~'CODE'.strip_heredoc
   class AddStatusToDevice < ActiveRecord::Migration[6.0]
     def change
       add_column :devices, :status, :string, null: false, default: 'disconnected'
@@ -54,14 +54,14 @@ file "db/migrate/#{Time.now.utc.strftime(FORMAT)}_add_status_to_devices.rb", <<~
   end
 CODE
 
-file 'test/fixtures/devices.yml', <<~CODE.strip_heredoc
+file 'test/fixtures/devices.yml', <<~'CODE'.strip_heredoc
   one:
     id: 123
   two:
     id: 789
 CODE
 
-file 'test/models/device_test.rb', <<~CODE.strip_heredoc
+file 'test/models/device_test.rb', <<~'CODE'.strip_heredoc
   require 'test_helper'
 
   class DeviceTest < ActiveSupport::TestCase

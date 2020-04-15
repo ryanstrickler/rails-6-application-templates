@@ -1,4 +1,4 @@
-file 'app/mailers/person_mailer.rb', <<~CODE.strip_heredoc
+file 'app/mailers/person_mailer.rb', <<~'CODE'.strip_heredoc
   class PersonMailer < ApplicationMailer
     def test(person:)
       @person = person
@@ -11,13 +11,13 @@ file 'app/mailers/person_mailer.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'app/views/person_mailer/test.html.slim', <<~CODE.strip_heredoc
+file 'app/views/person_mailer/test.html.slim', <<~'CODE'.strip_heredoc
   h1 Test email
 
   p = @person.full_name
 CODE
 
-file 'test/mailers/person_mailer_test.rb', <<~CODE.strip_heredoc
+file 'test/mailers/person_mailer_test.rb', <<~'CODE'.strip_heredoc
   require 'test_helper'
 
   class PersonMailerTest < ActionMailer::TestCase
@@ -33,7 +33,7 @@ file 'test/mailers/person_mailer_test.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'test/mailers/previews/person_mailer_preview.rb', <<~CODE.strip_heredoc
+file 'test/mailers/previews/person_mailer_preview.rb', <<~'CODE'.strip_heredoc
   # Preview all emails at http://localhost:3000/rails/mailers/person_mailer
   class PersonMailerPreview < ActionMailer::Preview
 

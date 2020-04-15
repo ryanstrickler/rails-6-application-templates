@@ -1,5 +1,5 @@
 run 'rm test/channels/application_cable/connection_test.rb'
-file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
+file 'test/channels/application_cable/connection_test.rb', <<~'CODE'.strip_heredoc
   require "test_helper"
 
   class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
@@ -40,7 +40,7 @@ file 'test/channels/application_cable/connection_test.rb', <<~CODE.strip_heredoc
 CODE
 
 run 'rm app/channels/application_cable/connection.rb'
-file 'app/channels/application_cable/connection.rb', <<~CODE.strip_heredoc
+file 'app/channels/application_cable/connection.rb', <<~'CODE'.strip_heredoc
   module ApplicationCable
     class Connection < ActionCable::Connection::Base
       identified_by :current_device

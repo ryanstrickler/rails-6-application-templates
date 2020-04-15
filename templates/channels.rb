@@ -1,4 +1,4 @@
-file 'app/channels/test_channel.rb', <<~CODE.strip_heredoc
+file 'app/channels/test_channel.rb', <<~'CODE'.strip_heredoc
   class TestChannel < ApplicationCable::Channel
     def subscribed
       stream_for 'all'
@@ -10,7 +10,7 @@ file 'app/channels/test_channel.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'app/javascript/channels/test_channel.js', <<~CODE.strip_heredoc
+file 'app/javascript/channels/test_channel.js', <<~'CODE'.strip_heredoc
   import consumer from "./consumer"
 
   consumer.subscriptions.create("TestChannel", {
@@ -34,7 +34,7 @@ file 'app/javascript/channels/test_channel.js', <<~CODE.strip_heredoc
   });
 CODE
 
-file 'test/channels/test_channel_test.rb', <<~CODE.strip_heredoc
+file 'test/channels/test_channel_test.rb', <<~'CODE'.strip_heredoc
   require "test_helper"
 
   class TestChannelTest < ActionCable::Channel::TestCase

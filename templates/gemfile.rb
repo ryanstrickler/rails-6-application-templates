@@ -2,11 +2,11 @@ run 'rm .ruby-version'
 run 'rm Gemfile'
 run 'rm Gemfile.lock'
 
-file '.ruby-version', <<~CODE.strip_heredoc
+file '.ruby-version', <<~'CODE'.strip_heredoc
   2.6.5
 CODE
 
-file 'Gemfile', <<~CODE.strip_heredoc
+file 'Gemfile', <<~'CODE'.strip_heredoc
   source 'https://rubygems.org'
 
   ruby '2.6.5'

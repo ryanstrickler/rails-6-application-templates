@@ -1,4 +1,4 @@
-file 'test/jobs/test_job_test.rb', <<~CODE.strip_heredoc
+file 'test/jobs/test_job_test.rb', <<~'CODE'.strip_heredoc
   require 'test_helper'
 
   class TestJobTest < ActiveJob::TestCase
@@ -15,7 +15,7 @@ file 'test/jobs/test_job_test.rb', <<~CODE.strip_heredoc
   end
 CODE
 
-file 'app/jobs/test_job.rb', <<~CODE.strip_heredoc
+file 'app/jobs/test_job.rb', <<~'CODE'.strip_heredoc
   class TestJob < ApplicationJob
     queue_as :default
 
