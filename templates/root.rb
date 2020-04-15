@@ -58,4 +58,4 @@ file 'test/system/load_root_test.rb', <<~CODE.strip_heredoc
       assert_selector "h1", text: "Root"
     end
   end
-end
+CODE
