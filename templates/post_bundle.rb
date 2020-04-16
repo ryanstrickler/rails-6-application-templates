@@ -30,7 +30,7 @@ class MigrationNamer
   private
 
   def extract_unique_filename_section(filename)
-    filename_only = filename.slice('db/migrate/') # 'YYYYMMDDHHMMSS_create_people.rb'
+    filename_only = filename.gsub('db/migrate/', '') # 'YYYYMMDDHHMMSS_create_people.rb'
     parts = filename_only.split('_') # ['YYYYMMDDHHMMSS', 'create', 'people.rb']
     parts_minus_timestamp = parts.drop(1) # ['create', 'people.rb']
     parts_minus_timestamp.join('_') # 'create_people.rb'
