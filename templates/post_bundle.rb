@@ -17,7 +17,7 @@ end
 
 # rubocop:disable Style/ClassVars
 class MigrationNamer
-  @timestamp = Time.now.utc.strfmt('%Y%m%d%H%M%S').to_i
+  @timestamp = Time.now.utc.strftime('%Y%m%d%H%M%S').to_i
 
   def initialize(filename)
     @original_filename = filename
