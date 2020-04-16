@@ -1,3 +1,10 @@
+# Ignoring these cops.
+Layout/LineLength:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+
+# New-ish cops.
 Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
