@@ -17,9 +17,8 @@ end
 
 # rubocop:disable Style/ClassVars
 class MigrationNamer
-  @timestamp = Time.now.utc.strftime('%Y%m%d%H%M%S').to_i
-
   def initialize(filename)
+    @@timestamp = Time.now.utc.strftime('%Y%m%d%H%M%S').to_i
     @original_filename = filename
     @unique_filename_section = extract_unique_filename_section(filename)
   end
@@ -46,7 +45,7 @@ end
 
 def add_migration(filename)
   renamer = MigrationNamer.new(filename)
-  file renamer.new_filename, open("FILE_URL/#{filename}").read
+  file renamer.new_filename, open("#{FILE_URL}/#{filename}").read
 end
 
 # Add root page.
