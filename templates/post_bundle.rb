@@ -7,7 +7,7 @@ def remove_file(filename)
 end
 
 def add_file(filename)
-  file filename, open("#{FILE_URL}/#{filename}").read
+  file filename, URI.open("#{FILE_URL}/#{filename}").read
 end
 
 def replace_file(filename)
