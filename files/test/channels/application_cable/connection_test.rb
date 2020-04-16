@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
   setup do
@@ -6,7 +8,7 @@ class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
     @device.update!(id: 123)
   end
 
-  test "connects with cookies" do
+  test 'connects with cookies' do
     cookies.encrypted[:device_id] = @device.id
 
     connect

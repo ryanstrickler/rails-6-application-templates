@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class TestChannelTest < ActionCable::Channel::TestCase
   setup do
@@ -6,7 +8,7 @@ class TestChannelTest < ActionCable::Channel::TestCase
     stub_connection(current_device: @device)
   end
 
-  test "subscribes and unsubscribes" do
+  test 'subscribes and unsubscribes' do
     subscribe
     assert subscription.confirmed?
     assert_has_stream 'test:all'

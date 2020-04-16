@@ -1,8 +1,10 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class LoadRootTest < ApplicationSystemTestCase
-  test "root page loads" do
+  test 'root page loads' do
     visit root_url
-    assert_selector "h1", text: "Root"
+    assert_selector 'h1', text: 'Root'
   end
 end

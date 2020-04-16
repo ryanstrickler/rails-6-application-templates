@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class PersonMailerTest < ActionMailer::TestCase
-  test "test email sends" do
+  test 'test email sends' do
     person = people(:one)
 
     email = PersonMailer.test(person: person).deliver

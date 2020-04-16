@@ -9,11 +9,11 @@ read app_name
 rails new $app_name -d postgresql --webpack=stimulus
 cd $app_name
 
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/pre-bundle.rb
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/pre_bundle.rb
 
 bundle
 
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/post-bundle.rb
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/post_bundle.rb
 
 rails db:create
 rails db:migrate
