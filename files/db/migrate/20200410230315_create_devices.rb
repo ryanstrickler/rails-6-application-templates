@@ -2,10 +2,12 @@
 
 class CreateDevices < ActiveRecord::Migration[6.0]
   def change
-    create_table :devices do |t|
-      t.string :status, null: false, default: 'disconnected'
+    unless table_exists?(:people)
+      create_table :devices do |t|
+        t.string :status, null: false, default: 'disconnected'
 
-      t.timestamps
+        t.timestamps
+      end
     end
   end
 end
