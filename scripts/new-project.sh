@@ -22,6 +22,8 @@ echo '' >> .gitignore
 echo '# Ignore code coverage.' >> .gitignore
 echo 'coverage' >> .gitignore
 
+bundle exec rubocop -a
+
 git init
 git add '.'
 git commit -a -m 'Initial commit'
