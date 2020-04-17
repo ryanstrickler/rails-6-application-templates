@@ -95,3 +95,9 @@ add_file 'test/system/load_root_test.rb'
 
 # Set up linting.
 add_file '.rubocop.yml'
+
+# Set up Heroku processes.
+add_file 'Procfile'
+add_file 'config/clock.rb'
+add_file 'config/initializers/sidekiq.rb'
+add_file 'config/sidekiq.yml'

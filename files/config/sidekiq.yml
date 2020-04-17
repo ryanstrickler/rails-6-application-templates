@@ -1,0 +1,5 @@
+:queues:
+  - ui
+  - mailers
+  - default
+  - background
