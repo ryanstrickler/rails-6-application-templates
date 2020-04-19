@@ -30,8 +30,8 @@ git commit -a -m 'Initial commit'
 
 bundle exec rubocop -a && bundle exec rails test:system test
 
-# cd ..
-# mv $app_name rails
-# cd rails
+atom .
 
-# atom .
+heroku apps:create $app_name
+git push --set-upstream heroku master
+heroku addons:create heroku-redis:hobby-dev
