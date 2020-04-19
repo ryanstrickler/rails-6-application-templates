@@ -28,11 +28,7 @@ git init
 git add '.'
 git commit -a -m 'Initial commit'
 
-cd $app_name
-
 bundle exec rubocop -a && bundle exec rails test:system test
-
-heroku local -p 3003
 
 # cd ..
 # mv $app_name rails
