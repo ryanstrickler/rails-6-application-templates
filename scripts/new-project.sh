@@ -33,5 +33,9 @@ bundle exec rubocop -a && bundle exec rails test:system test
 atom .
 
 heroku apps:create $app_name
+heroku buildpacks:add --index 1 heroku/nodejs
+heroku buildpacks:add --index 2 heroku/ruby
 git push --set-upstream heroku master
 heroku addons:create heroku-redis:hobby-dev
+
+heroku open
