@@ -32,10 +32,13 @@ bundle exec rubocop -a && bundle exec rails test:system test
 
 atom .
 
-heroku apps:create $app_name
+while [ !heroku apps:create $app_name ]
+do
+  echo Your app name is already taken on Heroku. Please enter another name to use.
+  read app_name
+done
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/ruby
 git push --set-upstream heroku master
 heroku addons:create heroku-redis:hobby-dev
-
 heroku open
