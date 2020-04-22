@@ -7,6 +7,12 @@ class DeviceTest < ActiveSupport::TestCase
     @device = devices(:one)
   end
 
+  describe 'fixture' do
+    test 'valid as generated' do
+      assert @device.valid?
+    end
+  end
+
   describe 'callbacks' do
     describe 'after_save_commit' do
       test 'broadcasts on the test channel' do

@@ -7,6 +7,12 @@ class PersonTest < ActiveSupport::TestCase
     @person = people(:one)
   end
 
+  describe 'fixture' do
+    test 'valid as generated' do
+      assert @person.valid?
+    end
+  end
+
   describe 'validations' do
     test 'first name required' do
       @person.first_name = nil
@@ -27,7 +33,7 @@ class PersonTest < ActiveSupport::TestCase
     end
 
     describe 'email' do
-      test 'returns hard-coded value for now' do
+      test 'fake value for now' do
         assert_equal 'testing@test123.com', @person.email
       end
     end
