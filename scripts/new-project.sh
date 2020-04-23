@@ -15,6 +15,13 @@ bundle
 
 rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/post_bundle.rb
 
+yarn add tailwindcss
+npx tailwindcss init
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind.rb
+
+yarn add @tailwindcss/ui
+rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind_plus_ui.rb
+
 rails db:create
 rails db:migrate
 
@@ -32,11 +39,14 @@ bundle exec rubocop -a && bundle exec rails test:system test
 
 atom .
 
-while [ !heroku apps:create $app_name ]
-do
-  echo Your app name is already taken on Heroku. Please enter another name to use.
-  read app_name
-done
+# export HEROKU_APP_NAME=$app_name
+# while [ !heroku apps:create $HEROKU_APP_NAME ]
+# do
+#   echo Your app name is already taken on Heroku. Please enter another name to use.
+#   read HEROKU_APP_NAME
+# done
+
+heroku apps:create $app_name
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/ruby
 git push --set-upstream heroku master
