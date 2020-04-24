@@ -101,3 +101,6 @@ add_file 'Procfile'
 add_file 'config/clock.rb'
 add_file 'config/initializers/sidekiq.rb'
 add_file 'config/sidekiq.yml'
+
+# Set up generators.
+add_file 'config/initializers/generators.rb'
