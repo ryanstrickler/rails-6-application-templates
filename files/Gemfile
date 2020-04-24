@@ -21,7 +21,7 @@ gem 'clockwork'
 gem 'httparty'
 gem 'lograge'
 gem 'sidekiq'
-gem 'slim'
+gem 'slim-rails'
 gem 'stripe'
 
 group :development, :test do
