@@ -18,11 +18,10 @@ gem 'webpacker'
 
 gem 'appsignal'
 gem 'clockwork'
-gem 'httparty'
+gem 'faraday'
 gem 'lograge'
 gem 'sidekiq'
-gem 'slim-rails'
-gem 'stripe'
+# gem 'stripe'
 
 group :development, :test do
   gem 'byebug'
