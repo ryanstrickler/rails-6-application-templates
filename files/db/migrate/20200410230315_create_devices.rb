@@ -2,7 +2,7 @@
 
 class CreateDevices < ActiveRecord::Migration[6.0]
   def change
-    unless table_exists?(:people)
+    unless table_exists?(:devices)
       create_table :devices do |t|
         t.string :status, null: false, default: 'disconnected'
 
