@@ -72,6 +72,6 @@ bundle lock --add-platform x86_64-linux
 heroku apps:create $app_name
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/ruby
-git push heroku main
 heroku addons:create heroku-redis:hobby-dev
+git push heroku main
 heroku open
