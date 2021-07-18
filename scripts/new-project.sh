@@ -22,7 +22,9 @@ bundle
 rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/post_bundle.rb
 
 # yarn add tailwindcss
-yarn add tailwindcss postcss autoprefixer @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
+# using PostCSS 7 compatibility build
+# https://tailwindcss.com/docs/installation#post-css-7-compatibility-build
+yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
 
 npx tailwindcss init
 
