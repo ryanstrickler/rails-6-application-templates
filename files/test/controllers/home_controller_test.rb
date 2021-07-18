@@ -5,7 +5,7 @@ require 'test_helper'
 class HomeControllerTest < ActionDispatch::IntegrationTest
   describe '#index' do
     test 'page loads' do
-      get home_url
+      get root_url
       assert_response :ok
     end
   end
