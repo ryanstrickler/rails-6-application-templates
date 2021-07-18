@@ -21,6 +21,8 @@ bundle
 
 rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/post_bundle.rb
 
+---
+
 # yarn add tailwindcss
 # using PostCSS 7 compatibility build
 # https://tailwindcss.com/docs/installation#post-css-7-compatibility-build
@@ -32,12 +34,13 @@ npx tailwindcss init
 
 rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/tailwind.rb
 
+---
+
 yarn add @tailwindcss/ui
 
 # rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind_plus_ui.rb
 
-# TODO: rework this
-# rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/tailwind_plus_ui.rb
+rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/tailwind_plus_ui.rb
 
 rails db:create
 rails db:migrate
@@ -69,6 +72,6 @@ bundle lock --add-platform x86_64-linux
 heroku apps:create $app_name
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/ruby
-git push heroku master
+git push heroku main
 heroku addons:create heroku-redis:hobby-dev
 heroku open
