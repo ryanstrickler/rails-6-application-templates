@@ -48,6 +48,7 @@ end
 def add_migration(filename)
   renamer = MigrationNamer.new(filename)
   file renamer.new_filename, open("#{FILE_URL}/#{filename}").read
+  sleep(1) # Wait a second to make sure the migration names don't conflict.
 end
 
 # Add home page.
