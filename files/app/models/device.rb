@@ -12,7 +12,7 @@ class Device < ApplicationRecord
 
   def broadcast_connected_count
     device_count = ApplicationController.render(
-      partial: 'root/device_count'
+      partial: 'home/device_count'
     )
 
     TestChannel.broadcast_to 'all', deviceCount: device_count

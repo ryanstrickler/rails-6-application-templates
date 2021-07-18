@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-FILE_URL = 'https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/files'
+# FILE_URL = 'https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/files'
+
+FILE_URL = '/Users/ryan/Code/ryanstrickler/rails-6-application-templates/files'
 
 def remove_file(filename)
   run "rm #{filename}"

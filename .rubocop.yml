@@ -1,21 +1,8 @@
-# Ignoring these cops.
+AllCops:
+  NewCops: enable
+
+  # Ignoring these cops.
 Layout/LineLength:
   Enabled: false
 Style/Documentation:
   Enabled: false
-
-# New-ish cops.
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-Style/ExponentialNotation:
-  Enabled: true

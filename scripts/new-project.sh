@@ -3,24 +3,39 @@
 # Usage:
 # bash <(curl -Ls https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/scripts/new-project.sh)
 
+gem update rails
+
 echo What is the name of your new Rails app?
 read app_name
 
 rails new $app_name -d postgresql --webpack=stimulus
 cd $app_name
 
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/pre_bundle.rb
+# rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/pre_bundle.rb
+
+rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/pre_bundle.rb
 
 bundle
 
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/post_bundle.rb
+# rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/post_bundle.rb
 
-yarn add tailwindcss
+rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/post_bundle.rb
+
+# yarn add tailwindcss
+yarn add tailwindcss postcss autoprefixer @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio
+
 npx tailwindcss init
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind.rb
+
+# rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind.rb
+
+rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/tailwind.rb
 
 yarn add @tailwindcss/ui
-rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind_plus_ui.rb
+
+# rails app:template LOCATION=https://raw.githubusercontent.com/ryanstrickler/rails-6-application-templates/master/templates/tailwind_plus_ui.rb
+
+# TODO: rework this
+# rails app:template LOCATION=/Users/ryan/Code/ryanstrickler/rails-6-application-templates/templates/tailwind_plus_ui.rb
 
 rails db:create
 rails db:migrate
@@ -29,15 +44,15 @@ echo '' >> .gitignore
 echo '# Ignore code coverage.' >> .gitignore
 echo 'coverage' >> .gitignore
 
-bundle exec rubocop -a
+bundle exec rubocop -A
 
 git init
 git add '.'
 git commit -a -m 'Initial commit'
 
-bundle exec rubocop -a && bundle exec rails test:system test
+bundle exec rubocop -A && bundle exec rails test:system test
 
-atom .
+code .
 
 # export HEROKU_APP_NAME=$app_name
 # while [ !heroku apps:create $HEROKU_APP_NAME ]
@@ -46,9 +61,12 @@ atom .
 #   read HEROKU_APP_NAME
 # done
 
+# add Heroku platform to bundle
+bundle lock --add-platform x86_64-linux
+
 heroku apps:create $app_name
 heroku buildpacks:add --index 1 heroku/nodejs
 heroku buildpacks:add --index 2 heroku/ruby
-git push --set-upstream heroku master
+git push heroku master
 heroku addons:create heroku-redis:hobby-dev
 heroku open

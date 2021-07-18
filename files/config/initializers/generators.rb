@@ -15,6 +15,6 @@ Rails.application.configure do
     # g.stylesheet_engine       # default: :css
     g.scaffold_stylesheet false # default: true
     # g.test_framework          # default: false / :minitest
-    g.template_engine :slim     # default: :erb
+    # g.template_engine :slim   # default: :erb
   end
 end

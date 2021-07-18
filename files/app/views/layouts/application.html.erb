@@ -2,24 +2,26 @@
 <html>
   <head>
     <title>Title goes here</title>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="bg-white">
     <div class="max-w-screen-md mx-auto pt-3 pb-10 px-4">
       <header class="mb-20">
-        <%#= render 'site/header' %> %>
+        <%#= render 'site/header' %>
       </header>
       <main class="mb-20">
         <%= yield %>
       </main>
       <footer>
-        <%#= render 'site/footer' %> %>
+        <%#= render 'site/footer' %>
       </footer>
     </div>
   </body>

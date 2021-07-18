@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module RootHelper
+module HomeHelper
   def test_helper(content:)
     content
   end
