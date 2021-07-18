@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Use application-specific job queues. Makes it easier to use sidekiq in local
   # development. Add the app name prefix in config/sidekiq.yml.

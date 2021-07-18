@@ -8,11 +8,13 @@ class ApplicationController < ActionController::Base
   def load_or_create_device
     load_device
     return if @device.present?
+
     create_device
   end
 
   def load_device
     return if cookies.encrypted[:device_id].blank?
+
     @device = Device.find_by(id: cookies.encrypted[:device_id])
   end
 
