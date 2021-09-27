@@ -107,3 +107,6 @@ add_file 'config/sidekiq.yml'
 
 # Set up generators.
 add_file 'config/initializers/generators.rb'
+
+# Set up other configurations.
+add_file 'config/initializers/nilify_blanks.rb'

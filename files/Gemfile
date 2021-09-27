@@ -20,6 +20,7 @@ gem 'appsignal'
 gem 'clockwork'
 gem 'faraday'
 gem 'lograge'
+gem 'nilify_blanks'
 gem 'sidekiq'
 # gem 'stripe'
 
